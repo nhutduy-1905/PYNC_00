@@ -1,0 +1,393 @@
+/*=============================
+GLOBAL STYLES/CLASSES
+=============================*/
+
+html {
+  font-size: 85%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Heebo', sans-serif;
+  font-weight: 300;
+  background: #FFF;
+  z-index: 1;
+  -webkit-animation: fadein 1s;
+  animation: fadein 1s;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 0.67em 0;
+  font-family: 'Playfair Display SC', serif;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h3, h4 {
+  font-weight: 300;
+}
+
+a {
+  cursor: pointer;
+}
+
+label,
+.fields {
+  font-weight: 300;
+}
+
+.font300 { font-weight: 300; }
+.font400 { font-weight: 400; }
+.center { text-align: center; }
+.underline { text-decoration: underline; }
+.white { color: #FFF; }
+.white:hover { color: #FDC208; }
+
+.photo-barrier {
+  height: 8px;
+  background: #FFF;
+}
+
+.btn-div {
+  text-align: left;
+}
+
+/* Pushes links horizontally to opposite sides */
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.split-right {
+  margin-left: auto;
+}
+
+/* Page transition animation */
+
+/* on page load */
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* on state transition */
+
+.ng-enter {
+  opacity: 0;
+  transition: 400ms;
+}
+
+.ng-enter-active {
+  opacity: 1;
+  transition: 400ms;
+}
+
+
+/*=============================
+INDEX.HTML TEMPLATE
+=============================*/
+
+/* --- Navbar --- */
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background: rgba(0,0,0,0.3);
+}
+
+nav p,
+nav a {
+  margin: 0 auto;
+  padding: 1rem;
+  display: inline-block;
+  color: #FFF;
+}
+
+nav a:visited,
+nav a:focus,
+nav a:hover,
+nav a:active {
+  color: #FFF;
+}
+
+nav a:focus {
+  text-decoration: none;
+}
+
+nav .left,
+nav .right {
+  display: inline-block;
+}
+
+.nav-container {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-bg {
+  background: #FDC208;
+}
+
+nav .name {
+  display: none;
+}
+
+
+/* --- Page layouts/splash images --- */
+
+.about,
+.login,
+.signup,
+.checkout,
+.thanks {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 90%;
+  color: #FFF;
+  z-index: 2;
+}
+
+.full-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.splash {
+  position: relative;
+}
+
+.splash::after {
+  position: absolute;
+  background: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.bg-img {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.leg { background-image: url('../img/site/home_2_coffee.png'); }
+.plate { background-image: url('../img/site/home_coffee.png'); }
+.tapa-breadsticks { background-image: url('../img/site/signup_image.png'); }
+.tapa-sherry { background-image: url('../img/site/login_image.png'); }
+.slate { background-image: url('../img/site/checkout.png'); }
+.hogs { background-image: url('../img/site/cerdos_ibericos.jpg') }
+
+
+/* --- Logo --- */
+
+.logo {
+  z-index: 2;
+  text-align: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-family: 'Playfair Display SC', serif;
+  letter-spacing: 1rem;
+  text-align: center;
+  color: #FFF;
+}
+
+.logo img {
+  display: inline-block;
+  position: relative;
+  color: #FFF;
+  left: -15px;
+  top: 5px;
+  width: 13.5rem;
+}
+
+/* --- Forms --- */
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+
+/*=============================
+INDIVIDUAL PAGES
+=============================*/
+
+/* --- Product list/details --- */
+
+.product-list img {
+  margin: 0 auto;
+  display: block;
+  max-height: 160px;
+}
+
+.product-list .product {
+  margin-bottom: 2rem;
+}
+
+.product-details {
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 700px;
+  width: 90%;
+}
+
+.product-details h3 {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.product-details img {
+  margin: 0 auto;
+  display: block;
+  max-height: 160px;
+}
+
+.product-details a,
+.product-list a {
+  color: #333;
+}
+
+.product-details a:hover,
+.product-list a:hover,
+.cart a:hover {
+  color: #D8000A;
+  text-decoration: none;
+}
+
+
+/* --- View cart --- */
+
+.view-cart {
+  margin: 0 auto;
+}
+
+.view-cart a {
+  display: block;
+  color: #333;
+}
+
+.price {
+  text-align: right;
+}
+
+.cart .product {
+  margin-bottom: 2rem;
+}
+
+.cart .btn-div {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.cart img {
+  max-height: 160px;
+}
+
+.cart li {
+  text-align: center;
+}
+
+
+/* --- Checkout --- */
+
+.checkout {
+  text-align: center;
+}
+
+.checkout h3 {
+  margin: 1rem 0;
+}
+
+.checkout label {
+  text-align: left;
+  display: block;
+}
+
+.confirmDetails {
+  text-align: left;
+  display: inline-block;
+}
+
+.thanks h3 {
+  text-align: center;
+}
+
+
+/*=============================
+MEDIA QUERIES
+=============================*/
+
+@media screen and (max-height: 600px) {
+
+  .signup {
+    height: 350px;
+    overflow-y: auto;
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .nav-container {
+    max-width: 1400px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav .name {
+    display: inline-block;
+  }
+
+  nav .left,
+  nav .right {
+    display: flex;
+    align-items: center;
+  }
+
+  .product-details img,
+  .product-list img,
+  .cart img {
+    max-height: 200px;
+  }
+
+}
+
+
+@media screen and (min-width: 1200px) {
+
+  html {
+    font-size: 100%;
+  }
+
+  .product-details img,
+  .product-list img {
+    max-height: 300px;
+  }
+
+}

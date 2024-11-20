@@ -1,0 +1,27 @@
+<div nav-offset class="container">
+    <div class="view-cart row">
+        <div class="row">
+            <h1>View cart</h1>
+        </div>
+        <div class="row split">
+            <a ui-sref="products" class="btn btn-default">Continue shopping</a>
+            <a ui-sref="checkout" ng-show="total" class="split-right btn btn-default">Checkout</a>
+            <h4 class="split-right" ng-hide="total">Your cart is empty</h4>
+        </div>
+        <div class="row price">
+            <h4>{{total | currency}}</h4>
+        </div>
+        <ul class="cart row">
+            <li ng-repeat="item in cart" class="col-xs-12 product">
+                <a ui-sref="product_details({product_id: item.product_id})">
+                    <h3>{{item.name}}</h3>
+                    <h4>{{item.price | currency}}</h4>
+                    <img ng-src="{{item.image_path}}">
+                </a>
+                <div class="btn-div">
+                    <btn ng-click="removeFromCart(item.item_id)" class="btn btn-default ib">Remove from cart</btn>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
